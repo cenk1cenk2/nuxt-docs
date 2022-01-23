@@ -2,7 +2,7 @@
 title: Task and Options
 description: 'Listr can be further customized per task and execution options.'
 category: Getting Started
-position: 4
+position: 5
 ---
 
 ## Task

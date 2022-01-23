@@ -2,7 +2,7 @@
 title: The Concept of Context
 description: 'Listr uses an internal variable called context to store the data.'
 category: Getting Started
-position: 5
+position: 6
 ---
 
 ## Context Variable

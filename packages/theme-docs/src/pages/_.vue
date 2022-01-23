@@ -13,7 +13,7 @@
       }"
     >
       <article class="max-w-none lg:px-8 prose dark:prose-dark">
-        <h1 class="flex justify-between items-center">
+        <h1 id="document-title" class="flex justify-between items-center">
           {{ document.title }}
           <Badge v-if="document.badge">{{ document.badge }}</Badge>
         </h1>
@@ -28,7 +28,7 @@
       <AppPrevNext :prev="prev" :next="next" />
     </div>
 
-    <AppToc v-if="!document.fullscreen" :toc="document.toc" />
+    <AppToc v-if="!document.fullscreen" :toc="document.toc" :document="document" />
   </div>
 </template>
 

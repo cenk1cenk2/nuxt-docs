@@ -26,6 +26,9 @@
           }"
         >
           <scrollactive highlight-first-item active-class="text-primary-500" :offset="0" tag="ul">
+            <li v-if="document.title" class="py-2 font-bold text-gray-700 border-t-0 border-dashed dark:text-gray-300 dark:border-gray-800">
+              <a href="#document-title" class="block py-0 duration-300 ease-in-out hover:pl-1 scrollactive-item transition-padding">{{ document.title }}</a>
+            </li>
             <li
               v-for="link of toc"
               :key="link.id"
@@ -60,6 +63,10 @@ import { mapGetters } from 'vuex'
 
 export default defineComponent({
   props: {
+    document: {
+      type: Object,
+      default: () => null
+    },
     toc: {
       type: Array,
       default: () => []
