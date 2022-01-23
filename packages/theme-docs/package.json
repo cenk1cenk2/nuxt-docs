@@ -36,46 +36,43 @@
     ],
     "*.{json,md}": [
       "prettier --loglevel warn --write"
-    ],
-    "*.{css,vue}": [
-      "stylelint --fix"
     ]
   },
   "files": [
     "src"
   ],
   "dependencies": {
-    "@docsearch/css": "^3.0.0-alpha.41",
-    "@docsearch/js": "^3.0.0-alpha.41",
+    "@docsearch/css": "^3.0.0-alpha.42",
+    "@docsearch/js": "^3.0.0-alpha.42",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@nuxt/content": "^1.15.0",
+    "@nuxt/content": "^1.15.1",
     "@nuxt/types": "^2.15.8",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/color-mode": "^2.1.1",
     "@nuxtjs/fontawesome": "^1.1.2",
     "@nuxtjs/google-fonts": "1.3.0",
-    "@nuxtjs/i18n": "^7.1.0",
+    "@nuxtjs/i18n": "^7.2.0",
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/tailwindcss": "^4.0.3",
     "@tailwindcss/typography": "0.4.1",
-    "autoprefixer": "^10.3.7",
+    "autoprefixer": "^10.4.2",
     "clipboard": "^2.0.8",
     "consola": "^2.15.3",
-    "defu": "^5.0.0",
+    "defu": "^5.0.1",
     "execa": "^5.0.0",
-    "highlight.js": "^11.3.1",
+    "highlight.js": "^11.4.0",
     "lodash.groupby": "^4.6.0",
     "marked": "^3.0.7",
     "md5": "^2.3.0",
-    "postcss": "^8.3.11",
+    "postcss": "^8.4.5",
     "prism-theme-one-dark": "^1.0.0",
     "prism-themes": "^1.9.0",
     "remark-behead": "^2.3.3",
     "remark-unlink": "^3",
-    "shiki": "^0.9.12",
-    "shiki-twoslash": "^3.0.1",
+    "shiki": "^0.10.0",
+    "shiki-twoslash": "^3.0.2",
     "tailwind-css-variables": "^3.0.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "theme-colors": "^0.0.5",
@@ -84,10 +81,10 @@
     "vue-scrollactive": "^0.9.3"
   },
   "devDependencies": {
-    "@nuxtjs/composition-api": "^0.29.3",
+    "@nuxtjs/composition-api": "^0.31.0",
     "@types/md5": "^2.3.1",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.19.0",
+    "eslint": "^8.7.0",
     "nuxt": "^2.15.4",
     "tailwindcss-dark-mode": "^1.1.7"
   }

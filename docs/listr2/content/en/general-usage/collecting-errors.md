@@ -3,12 +3,24 @@ title: Collecting Errors
 description: 'Collecting errors through running listr and analyzing them afterward.'
 category: General Usage
 position: 104
-badge: 3.12.0+
+badge: 4.0.0+
 ---
 
 ## Introduction
 
 Errors from the tasks are collected inside an array in the main listr task list as `tasks.err` where `tasks` is the listr class. Since there are options to ignore some errors on cases like `exitOnError` or the ability to retry the given task through `task.retry`, encountered errors can be swallowed while the execution. To deal with those swallowed errors, all the errors that are encountered even though it does not stops the execution gets collected through this property.
+
+## Modes
+
+<GithubIssueLink issue="615"></GithubIssueLink>
+
+Error collection now has three modes to choose from which are, `false`, `minimal` and `full`. This can be set through per task in the listr options with the key `collectErrors`.
+
+Due to potential memory leaks from cloning the context and task to the `ListrError`, default mode is `minimal`, which will only collect where the error has occurred, when it has been encountered and what the `error.message` is.
+
+If you want to fetch the full information for debugging you can set the mode to `full`. This will also clone the current context and task to the `ListrError`.
+
+You can disable the error collection completely by setting it to `false`.
 
 ## ListrError
 

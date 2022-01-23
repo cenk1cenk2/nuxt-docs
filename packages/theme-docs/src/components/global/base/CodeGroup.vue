@@ -34,7 +34,7 @@ export default defineComponent({
   },
   mounted () {
     this.tabs = this.$slots.default
-      .filter(slot => Boolean(slot.componentOptions))
+      .filter((slot) => Boolean(slot.componentOptions))
       .map((slot) => {
         return {
           label: slot.componentOptions.propsData.label,

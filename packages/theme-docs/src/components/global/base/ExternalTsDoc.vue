@@ -98,13 +98,13 @@ export default defineComponent({
               for (let depth = 6; depth > 0; depth--) {
                 visitParents(
                   tree,
-                  node => node.type === 'heading' && node.depth === depth,
+                  (node) => node.type === 'heading' && node.depth === depth,
                   (node, ancestors) => {
                     const start = node
                     const depth = start.depth
                     const parent = ancestors[ancestors.length - 1]
 
-                    const isEnd = node => (node.type === 'heading' && node.depth <= depth) || node.type === 'export'
+                    const isEnd = (node) => (node.type === 'heading' && node.depth <= depth) || node.type === 'export'
                     const end = findAfter(parent, start, isEnd)
 
                     const startIndex = parent.children.indexOf(start)
@@ -113,14 +113,14 @@ export default defineComponent({
                     const between = parent.children.slice(startIndex, endIndex > 0 ? endIndex : undefined)
 
                     const firstChild = between?.[0]?.children
-                    if (firstChild && firstChild.some(child => pick.includes(child.value))) {
+                    if (firstChild && firstChild.some((child) => pick.includes(child.value))) {
                       sections.push(between)
                     }
                   }
                 )
               }
 
-              tree.children = sections.flatMap(i => i)
+              tree.children = sections.flatMap((i) => i)
             }
           })
         }

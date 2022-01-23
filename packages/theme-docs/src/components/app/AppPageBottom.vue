@@ -33,7 +33,7 @@ export default defineComponent({
         this.githubUrls?.docs?.prefix ?? this.settings.defaultDir,
         `content${this.document.path}${this.document.extension}`
       ]
-        .filter(path => !!path)
+        .filter((path) => !!path)
         .join('/')
     }
   }

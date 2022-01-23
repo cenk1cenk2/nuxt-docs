@@ -2,7 +2,7 @@
 title: Creating a New Instance
 description: 'Creating a new listr instance will generate a class.'
 category: Getting Started
-position: 3
+position: 4
 ---
 
 ## Generate New Class

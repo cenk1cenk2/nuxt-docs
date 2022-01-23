@@ -41,7 +41,7 @@ export default defineComponent({
       return this.stripTrailingSlash(url)
     },
     initialize (userOptions, code) {
-      const lang = this.$i18n.locales.find(locale => locale.code === code)
+      const lang = this.$i18n.locales.find((locale) => locale.code === code)
 
       Promise.all([ import(/* webpackChunkName: "docsearch" */ '@docsearch/js'), import(/* webpackChunkName: "docsearch" */ '@docsearch/css') ]).then(([ docsearch ]) => {
         docsearch = docsearch.default

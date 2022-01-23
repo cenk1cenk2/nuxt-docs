@@ -1,6 +1,6 @@
 import { themeModule } from './theme.module'
 
-export const defaultConfig = docsOptions => ({
+export const defaultConfig = (docsOptions) => ({
   server: {
     host: '0.0.0.0'
   },

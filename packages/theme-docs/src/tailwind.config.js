@@ -37,7 +37,7 @@ module.exports = ({ nuxt }) => ({
       transitionProperty: {
         padding: 'padding'
       },
-      typography: theme => ({
+      typography: (theme) => ({
         DEFAULT: {
           css: {
             a: {
