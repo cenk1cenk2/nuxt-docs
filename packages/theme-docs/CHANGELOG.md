@@ -1,3 +1,9 @@
+## @cenk1cenk2/nuxt-content-theme-docs [2.2.3](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@2.2.2...@cenk1cenk2/nuxt-content-theme-docs@2.2.3) (2022-01-23)
+
+### Bug Fixes
+
+- update dependencies and fix problems with them ([9117fd8](https://github.com/cenk1cenk2/nuxt-docs/commit/9117fd87830fab2a44a2fe9bbb79f80b84d9593d))
+
 ## @cenk1cenk2/nuxt-content-theme-docs [2.2.2](https://github.com/cenk1cenk2/nuxt-docs/compare/@cenk1cenk2/nuxt-content-theme-docs@2.2.1...@cenk1cenk2/nuxt-content-theme-docs@2.2.2) (2021-10-24)
 
 ### Bug Fixes
