@@ -64,7 +64,7 @@ export default defineComponent({
   },
   methods: {
     isCategoryActive (documents) {
-      return documents.some(document => document.to === this.$route.fullPath)
+      return documents.some((document) => document.to === this.$route.fullPath)
     },
     isDocumentNew (document) {
       if (process.server) {

@@ -1,10 +1,10 @@
 module.exports = {
   root: true,
   parserOptions: {
-    parser: 'babel-eslint',
-    sourceType: 'module'
+    parser: '@babel/eslint-parser',
+    requireConfigFile: false
   },
-  extends: [ '@nuxtjs', '@cenk1cenk2/eslint-config/index', '@cenk1cenk2/eslint-config/typescript' ],
+  extends: [ '@nuxtjs', 'plugin:jest/recommended', '@cenk1cenk2/eslint-config/index', '@cenk1cenk2/eslint-config/typescript' ],
   rules: {
     'vue/singleline-html-element-content-newline': 0,
     'vue/multiline-html-element-content-newline': 0,

@@ -19,7 +19,7 @@ export function themeModule () {
 
   // Configure `components/` dir
   hook('components:dirs', async (dirs) => {
-    dirs.forEach(d => consola.info(`Discovered components directory: ${d}`))
+    dirs.forEach((d) => consola.info(`Discovered components directory: ${d}`))
 
     const components = [
       { path: path.resolve(nuxt.options.rootDir, 'components') },
@@ -49,7 +49,7 @@ export function themeModule () {
 
   // Configure content after each hook
   hook('content:file:beforeInsert', (document) => {
-    const regexp = new RegExp(`^/(${options.i18n.locales.map(locale => locale.code).join('|')})`, 'gi')
+    const regexp = new RegExp(`^/(${options.i18n.locales.map((locale) => locale.code).join('|')})`, 'gi')
     const dir = document.dir.replace(regexp, '')
     const slug = document.slug.replace(/^index/, '')
     const category = document.category && typeof document.category === 'string' ? document.category : ''
@@ -60,7 +60,7 @@ export function themeModule () {
 
   // Extend `/` route
   hook('build:extendRoutes', (routes) => {
-    const allRoutes = routes.find(route => route.name === 'all')
+    const allRoutes = routes.find((route) => route.name === 'all')
 
     routes.push({
       ...allRoutes,

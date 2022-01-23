@@ -138,7 +138,7 @@ this.renderHook$.subscribe(() => {
 You can tell Listr to use your custom renderer by setting `renderer` option in `new Listr()` to your custom renderer.
 
 ```typescript
-import MyAmazingRenderer from './myAmazingRenderer';
+import MyAmazingRenderer from './myAmazingRenderer'
 
 const tasks: ListrTaskObject<any, typeof DefaultRenderer>[] = [
   /* Array of task objects */

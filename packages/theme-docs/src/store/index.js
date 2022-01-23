@@ -143,9 +143,9 @@ export const actions = {
           }
           return res
         })
-        .then(res => res.json())
+        .then((res) => res.json())
       releases = data
-        .filter(r => !r.draft && !r.prerelease)
+        .filter((r) => !r.draft && !r.prerelease)
         .map((release) => {
           return {
             name: (release.name || release.tag_name).replace('Release ', ''),
@@ -155,7 +155,7 @@ export const actions = {
         })
     } catch (e) {}
 
-    const getMajorVersion = r => r.name && Number(r.name.substring(1, 2))
+    const getMajorVersion = (r) => r.name && Number(r.name.substring(1, 2))
     releases.sort((a, b) => {
       const aMajorVersion = getMajorVersion(a)
       const bMajorVersion = getMajorVersion(b)
@@ -185,7 +185,7 @@ export const actions = {
           }
           return res
         })
-        .then(res => res.json())
+        .then((res) => res.json())
       defaultBranch = data.default_branch
     } catch (e) {}
 
