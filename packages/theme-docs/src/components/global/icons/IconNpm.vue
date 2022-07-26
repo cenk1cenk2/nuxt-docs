@@ -19,7 +19,7 @@ import { mapGetters } from 'vuex'
 
 export default defineComponent({
   computed: {
-    ...mapGetters([ 'settings', 'npmUrls' ]),
+    ...mapGetters(['settings', 'npmUrls']),
     faNpm () {
       return faNpm
     }

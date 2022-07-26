@@ -44,6 +44,7 @@ export default defineComponent({
     const githubIssue = useStatic(
       async () => {
         let res
+
         try {
           res = await $axios.get('https://api.github.com/repos/' + settings.github + '/issues/' + props.issue)
         } catch (err) {

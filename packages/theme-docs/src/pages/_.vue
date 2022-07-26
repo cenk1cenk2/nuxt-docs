@@ -51,13 +51,14 @@ export default defineComponent({
   },
   async asyncData ({ $content, app, params, error }) {
     const path = `/${app.i18n.locale}/${params.pathMatch || 'index'}`
-    const [ document ] = await $content({ deep: true }).where({ path }).fetch()
+    const [document] = await $content({ deep: true }).where({ path }).fetch()
+
     if (!document) {
       return error({ statusCode: 404, message: 'Page not found' })
     }
 
-    const [ prev, next ] = await $content(app.i18n.locale, { deep: true })
-      .only([ 'title', 'path', 'to' ])
+    const [prev, next] = await $content(app.i18n.locale, { deep: true })
+      .only(['title', 'path', 'to'])
       .sortBy('position', 'asc')
       .surround(document.path, { before: 1, after: 1 })
       .fetch()
@@ -103,7 +104,7 @@ export default defineComponent({
     }
   },
   computed: {
-    ...mapGetters([ 'settings' ])
+    ...mapGetters(['settings'])
   },
   mounted () {
     if (this.document.version) {
@@ -116,6 +117,7 @@ export default defineComponent({
       for (const block of blocks) {
         const CopyButton = Vue.extend(AppCopyButton)
         const component = new CopyButton().$mount()
+
         block.appendChild(component.$el)
       }
     }, 100)

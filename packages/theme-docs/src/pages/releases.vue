@@ -43,12 +43,12 @@ export default defineComponent({
     }
   },
   computed: {
-    ...mapGetters([ 'settings' ]),
+    ...mapGetters(['settings']),
     releases () {
       return this.$store.state.releases
     },
     toc () {
-      return this.releases.map((release) => ({
+      return this.releases.map(release => ({
         id: release.name,
         depth: 2,
         text: release.name

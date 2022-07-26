@@ -78,7 +78,7 @@ export default defineComponent({
     }
   },
   computed: {
-    ...mapGetters([ 'settings' ]),
+    ...mapGetters(['settings']),
     faChevronCircleUp () {
       return faChevronCircleUp
     },

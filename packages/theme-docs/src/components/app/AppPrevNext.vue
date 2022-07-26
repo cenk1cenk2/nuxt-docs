@@ -37,7 +37,7 @@ export default defineComponent({
     }
   },
   computed: {
-    ...mapGetters([ 'settings' ]),
+    ...mapGetters(['settings']),
     faLongArrowAltLeft () {
       return faLongArrowAltLeft
     },

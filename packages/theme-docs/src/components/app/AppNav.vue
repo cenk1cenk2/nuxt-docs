@@ -49,7 +49,7 @@ import { mapGetters } from 'vuex'
 
 export default defineComponent({
   computed: {
-    ...mapGetters([ 'settings' ]),
+    ...mapGetters(['settings']),
     menu: {
       get () {
         return this.$store.state.menu.open
@@ -64,17 +64,19 @@ export default defineComponent({
   },
   methods: {
     isCategoryActive (documents) {
-      return documents.some((document) => document.to === this.$route.fullPath)
+      return documents.some(document => document.to === this.$route.fullPath)
     },
     isDocumentNew (document) {
       if (process.server) {
         return
       }
+
       if (!document.version || document.version <= 0) {
         return
       }
 
       const version = localStorage.getItem(`document-${document.slug}-version`)
+
       if (document.version > Number(version)) {
         return true
       }

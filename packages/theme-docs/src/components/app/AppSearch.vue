@@ -68,13 +68,15 @@ export default defineComponent({
   watch: {
     async q (q) {
       this.focusIndex = -1
+
       if (!q) {
         this.searching = false
         this.results = []
+
         return
       }
       this.searching = true
-      this.results = await this.$content(this.$i18n.locale, { deep: true }).sortBy('position', 'asc').only([ 'title', 'slug', 'category', 'to' ]).limit(12).search(q).fetch()
+      this.results = await this.$content(this.$i18n.locale, { deep: true }).sortBy('position', 'asc').only(['title', 'slug', 'category', 'to']).limit(12).search(q).fetch()
       this.searching = false
     }
   },
@@ -113,6 +115,7 @@ export default defineComponent({
         return
       }
       const result = this.focusIndex === -1 ? this.results[0] : this.results[this.focusIndex]
+
       this.$router.push(this.localePath(result.to))
       // Unfocus the input and reset the query.
       this.$refs.search.blur()

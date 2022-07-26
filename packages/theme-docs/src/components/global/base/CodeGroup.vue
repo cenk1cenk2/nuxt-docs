@@ -34,7 +34,7 @@ export default defineComponent({
   },
   mounted () {
     this.tabs = this.$slots.default
-      .filter((slot) => Boolean(slot.componentOptions))
+      .filter(slot => Boolean(slot.componentOptions))
       .map((slot) => {
         return {
           label: slot.componentOptions.propsData.label,
@@ -56,10 +56,12 @@ export default defineComponent({
     },
     updateHighlighteUnderlinePosition () {
       const activeTab = this.$refs.tabs[this.activeTabIndex]
+
       if (!activeTab) {
         return
       }
       const highlightUnderline = this.$refs['highlight-underline']
+
       highlightUnderline.style.left = `${activeTab.offsetLeft}px`
       highlightUnderline.style.width = `${activeTab.clientWidth}px`
     }

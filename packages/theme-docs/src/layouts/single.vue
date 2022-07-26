@@ -27,7 +27,7 @@ export default {
         return this.settings.title
       },
       bodyAttrs: {
-        class: [ ...this.bodyClass, 'antialiased text-gray-700 leading-normal bg-white dark:bg-gray-900 dark:text-gray-300' ]
+        class: [...this.bodyClass, 'antialiased text-gray-700 leading-normal bg-white dark:bg-gray-900 dark:text-gray-300']
       },
       ...i18nSeo,
       meta: (i18nSeo.meta || []).concat([
@@ -82,9 +82,9 @@ export default {
     }
   },
   computed: {
-    ...mapGetters([ 'settings' ]),
+    ...mapGetters(['settings']),
     bodyClass () {
-      return this.$store.state.menu.open ? [ 'h-screen lg:h-auto overflow-y-hidden lg:overflow-y-auto' ] : []
+      return this.$store.state.menu.open ? ['h-screen lg:h-auto overflow-y-hidden lg:overflow-y-auto'] : []
     }
   }
 }

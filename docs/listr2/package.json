@@ -17,7 +17,6 @@
     "generate": "NODE_ENV=production nuxt generate",
     "lint": "prettier --write --loglevel warn ./ && eslint --ext .ts,.js,.tsx,.jsx,.vue --fix ./ && markdownlint ./content/**/*.md --ignore node_modules --fix",
     "lint:check": "eslint --ext .ts,.js,.tsx,.jsx,.vue ./",
-    "lint:staged": "lint-staged",
     "copy:dockerfile": "cp ../../Dockerfile ./"
   },
   "lint-staged": {

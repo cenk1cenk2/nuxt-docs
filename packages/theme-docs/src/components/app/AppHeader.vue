@@ -67,7 +67,7 @@ export default defineComponent({
     }
   },
   computed: {
-    ...mapGetters([ 'settings', 'githubUrls', 'lastRelease' ]),
+    ...mapGetters(['settings', 'githubUrls', 'lastRelease']),
     menu: {
       get () {
         return this.$store.state.menu.open

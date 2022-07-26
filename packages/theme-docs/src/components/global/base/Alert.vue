@@ -21,7 +21,7 @@ export default defineComponent({
       type: String,
       default: 'info',
       validator (value) {
-        return [ 'info', 'success', 'warning', 'danger' ].includes(value)
+        return ['info', 'success', 'warning', 'danger'].includes(value)
       }
     }
   },

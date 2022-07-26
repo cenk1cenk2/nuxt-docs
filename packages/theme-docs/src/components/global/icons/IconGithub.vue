@@ -19,7 +19,7 @@ import { mapGetters } from 'vuex'
 
 export default defineComponent({
   computed: {
-    ...mapGetters([ 'settings', 'githubUrls' ]),
+    ...mapGetters(['settings', 'githubUrls']),
     faGithub () {
       return faGithub
     }

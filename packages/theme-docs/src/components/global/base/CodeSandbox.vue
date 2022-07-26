@@ -29,6 +29,7 @@ export default defineComponent({
   mounted () {
     if (!window.IntersectionObserver) {
       this.isIntersecting = true
+
       return
     }
 

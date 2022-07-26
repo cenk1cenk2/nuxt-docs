@@ -1,5 +1,6 @@
 import marked, { Renderer } from 'marked'
 
+// eslint-disable-next-line no-unused-vars
 export default function ({ app }, inject) {
   const renderer = new Renderer()
 

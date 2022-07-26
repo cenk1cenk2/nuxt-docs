@@ -99,6 +99,7 @@ export const mutations = {
   },
   SET_SETTINGS (state, settings) {
     state.settings = defu({ filled: true }, settings, state.settings)
+
     if (!state.settings.url) {
       // eslint-disable-next-line no-console
       console.warn('Please provide the `url` property in `content/setting.json`')
@@ -113,6 +114,7 @@ export const actions = {
       return
     }
     const docs = await this.$content(this.$i18n.locale, { deep: true }).only([ 'title', 'menuTitle', 'category', 'slug', 'version', 'to' ]).sortBy('position', 'asc').fetch()
+
     if (state.releases.length > 0) {
       docs.push({
         slug: 'releases',
@@ -131,19 +133,23 @@ export const actions = {
     }
 
     const options = {}
+
     if (this.$config.githubToken) {
       options.headers = { Authorization: `token ${this.$config.githubToken}` }
     }
     let releases = []
+
     try {
       const data = await fetch(getters.githubUrls.api.releases, options)
         .then((res) => {
           if (!res.ok) {
             throw new Error(res.statusText)
           }
+
           return res
         })
         .then((res) => res.json())
+
       releases = data
         .filter((r) => !r.draft && !r.prerelease)
         .map((release) => {
@@ -153,15 +159,19 @@ export const actions = {
             body: this.$markdown(release.body)
           }
         })
+      // eslint-disable-next-line no-empty
     } catch (e) {}
 
     const getMajorVersion = (r) => r.name && Number(r.name.substring(1, 2))
+
     releases.sort((a, b) => {
       const aMajorVersion = getMajorVersion(a)
       const bMajorVersion = getMajorVersion(b)
+
       if (aMajorVersion !== bMajorVersion) {
         return bMajorVersion - aMajorVersion
       }
+
       return new Date(b.date) - new Date(a.date)
     })
 
@@ -173,26 +183,32 @@ export const actions = {
     }
 
     const options = {}
+
     if (this.$config.githubToken) {
       options.headers = { Authorization: `token ${this.$config.githubToken}` }
     }
     let defaultBranch
+
     try {
       const data = await fetch(getters.githubUrls.api.repo, options)
         .then((res) => {
           if (!res.ok) {
             throw new Error(res.statusText)
           }
+
           return res
         })
         .then((res) => res.json())
+
       defaultBranch = data.default_branch
+      // eslint-disable-next-line no-empty
     } catch (e) {}
 
     commit('SET_DEFAULT_BRANCH', defaultBranch || 'main')
   },
   async fetchSettings ({ commit }) {
     try {
+      // eslint-disable-next-line no-unused-vars
       const { dir, extension, path, slug, to, createdAt, updatedAt, ...settings } = await this.$content('settings').fetch()
 
       commit('SET_SETTINGS', settings)
