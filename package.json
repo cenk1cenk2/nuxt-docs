@@ -21,6 +21,7 @@
     "clean": "lerna clean -y && rimraf node_modules yarn.lock",
     "exec": "lerna exec --stream",
     "command": "lerna run --stream",
+    "lint:check": "yarn command lint:check --concurrency 1",
     "docs:toc": "markdown-toc README.md --bullets='-' -i && yarn command --no-bail docs:toc",
     "dev:start:listr2": "cd docs/listr2 && yarn dev:start"
   },
